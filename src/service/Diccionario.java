@@ -37,10 +37,23 @@ public class Diccionario {
     }
 
     public void removerPalabra(String palabra) {
-
+        boolean seEncontro = false;
+        for (Palabra palabraEnDiccionario : palabras) {
+            if (palabraEnDiccionario.getPalabra().equals(palabra)) {
+                seEncontro = true;
+                palabras.remove(palabraEnDiccionario);
+                System.out.println("Se removio la palabra: " + palabra);
+                break;
+            }
+        }
+        if (!seEncontro) {
+            System.out.println("La palabra " + palabra + " no se encuentra en el diccionario.");
+        }
     }
 
     public void imprimirPalabras() {
-
+        for (Palabra auxiliar : palabras){
+            System.out.println(auxiliar.getPalabra());
+        }
     }
 }

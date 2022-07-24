@@ -21,9 +21,6 @@ public class Palabra {
         return palabra;
     }
 
-    public String getSignificado() {
-        return significado;
-    }
 
     public void setSignificado(String significado) {
         this.significado = significado;

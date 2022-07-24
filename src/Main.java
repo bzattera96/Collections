@@ -31,6 +31,9 @@ public class Main {
         diccionarioEspaniol.registrarPalabra(new Palabra("Abeja", "Insecto himenóptero", "Español"));
         diccionarioEspaniol.registrarPalabra(new Palabra("Programación", "Acción", "Español"));
 
-        diccionarioEspaniol.buscarPalabra("Programación");
+        diccionarioEspaniol.buscarPalabra("Saludo");
+        diccionarioEspaniol.imprimirPalabras();
+        diccionarioEspaniol.removerPalabra("Abeja");
+        diccionarioEspaniol.removerPalabra("Manzana");
     }
 }
