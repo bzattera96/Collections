@@ -1,6 +1,8 @@
 import domain.Employee;
+import domain.Libro;
 import domain.Palabra;
 import service.AppCompany;
+import service.Biblioteca;
 import service.Diccionario;
 
 import java.util.ArrayList;
@@ -23,7 +25,6 @@ public class Main {
         AppCompany.reportEmployeeData(employees);
         System.out.println("Los empleados menores de 30 años son: ");
         AppCompany.getFromEmployeesLessThanThirty(employees);
-        */
 
         Diccionario diccionarioEspaniol = new Diccionario("Español");
         diccionarioEspaniol.registrarPalabra(new Palabra("Programación", "Acción y efecto programar", "Español"));
@@ -35,5 +36,22 @@ public class Main {
         diccionarioEspaniol.imprimirPalabras();
         diccionarioEspaniol.removerPalabra("Abeja");
         diccionarioEspaniol.removerPalabra("Manzana");
+        */
+
+        Biblioteca biblioteca1 = new Biblioteca();
+        biblioteca1.agregarLibro(new Libro("The Lightning Thief", "Rick Riordan", 2005));
+        biblioteca1.agregarLibro(new Libro("The Two Towers", "John Ronald Reuel Tolkien", 1954));
+        biblioteca1.agregarLibro(new Libro("The Outsider", "Stephen King", 2020));
+        biblioteca1.agregarLibro(new Libro("The Two Towers", "John Ronald Reuel Tolkien", 1954));
+        biblioteca1.agregarLibro(new Libro("The Sea of Monsters", "Rick Riordan", 2006));
+
+        biblioteca1.etiquetarLibro();
+        System.out.println("-------------");
+
+        biblioteca1.imprimirLibros();
+        System.out.println("-------------");
+
+        System.out.println(biblioteca1.buscarLibro("The Two Towers"));
+        System.out.println(biblioteca1.buscarLibro("Eclipse"));
     }
 }
