@@ -4,6 +4,7 @@ import domain.Palabra;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Diccionario {
     private String idioma;
@@ -11,7 +12,7 @@ public class Diccionario {
 
     public Diccionario(String idioma) {
         this.idioma = idioma;
-        this.palabras = new HashSet<>();
+        this.palabras = new TreeSet<>(); //al agregar TreeSet, tengo que hacer cambios ++
     }
 
     public String getIdioma() {
@@ -39,10 +40,11 @@ public class Diccionario {
     public void removerPalabra(String palabra) {
         boolean seEncontro = false;
         for (Palabra palabraEnDiccionario : palabras) {
+            //foreach (1. Tipo de Dato a recorrer (obj) 2. auxiliar local : 3. De donde saco eso)
             if (palabraEnDiccionario.getPalabra().equals(palabra)) {
                 seEncontro = true;
                 palabras.remove(palabraEnDiccionario);
-                System.out.println("Se removio la palabra: " + palabra);
+                System.out.println("Se removió la palabra: " + palabra + ".");
                 break;
             }
         }
@@ -50,6 +52,11 @@ public class Diccionario {
             System.out.println("La palabra " + palabra + " no se encuentra en el diccionario.");
         }
     }
+    //Remove directamente busca, por eso es que con palabras.remove()
+    //public void removerPalabra(String palabra) {
+    //Palabra palabraARemover = new Palabra(palabra); vuelvo el string objeto palabra para pasarlo al remove
+    //boolean seRemovio = palabras.remove(palabraARemover);
+    //if (seRemovio) {
 
     public void imprimirPalabras() {
         for (Palabra auxiliar : palabras){
