@@ -1,12 +1,16 @@
 import domain.Employee;
 import domain.Libro;
 import domain.Palabra;
+import domain.Solicitud;
 import service.AppCompany;
 import service.Biblioteca;
 import service.Diccionario;
+import util.PrioridadSolicitudComparator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Main {
     public static final void main(String[] args) {
@@ -36,7 +40,6 @@ public class Main {
         diccionarioEspaniol.imprimirPalabras();
         diccionarioEspaniol.removerPalabra("Abeja");
         diccionarioEspaniol.removerPalabra("Manzana");
-        */
 
         Biblioteca biblioteca1 = new Biblioteca();
         biblioteca1.agregarLibro(new Libro("The Lightning Thief", "Rick Riordan", 2005));
@@ -53,5 +56,19 @@ public class Main {
 
         System.out.println(biblioteca1.buscarLibro("The Two Towers"));
         System.out.println(biblioteca1.buscarLibro("Eclipse"));
+
+        Queue<Solicitud> solicitudes = new PriorityQueue<>(new PrioridadSolicitudComparator()); //así usa el comparador
+        solicitudes.add(new Solicitud(5, "Brenda"));
+        solicitudes.add(new Solicitud(2, "Mariana"));
+        solicitudes.add(new Solicitud(0, "Lucía"));
+        solicitudes.add(new Solicitud(1, "Kenny"));
+
+        while (solicitudes.size() > 0) {
+            System.out.println(solicitudes.remove()); //usa toString de forma implícita
+        }
+        */
+
+
+        
     }
 }

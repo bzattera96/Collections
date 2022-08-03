@@ -8,7 +8,8 @@ import java.util.TreeSet;
 
 public class Diccionario {
     private String idioma;
-    private Set<Palabra> palabras;
+    private Set<Palabra> palabras; // private Queue<Urgencia> urgencias;
+    // this.urgencias = new PriorityQueue<>();
 
     public Diccionario(String idioma) {
         this.idioma = idioma;
