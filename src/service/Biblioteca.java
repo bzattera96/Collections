@@ -27,7 +27,7 @@ public class Biblioteca {
         }
     }
 
-    public List buscarLibro(String tituloABuscar) {
+    public List<Libro> buscarLibro(String tituloABuscar) {
         List<Libro> auxiliar = new ArrayList<>();
         //creamos lista auxiliar para devolver libros con titulo igual al titulo buscado
         for (int i = 0; i < libros.size(); i++) { //recorrer lista para buscar el titulo entre todos los libros
