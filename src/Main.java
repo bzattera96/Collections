@@ -2,6 +2,7 @@ import domain.Employee;
 import domain.Libro;
 import domain.Palabra;
 import domain.Solicitud;
+import exceptions.PalabraInexistenteException;
 import service.AppCompany;
 import service.Biblioteca;
 import service.Diccionario;
@@ -68,7 +69,18 @@ public class Main {
         }
         */
 
+        Diccionario diccionario1 = new Diccionario("Español");
+        diccionario1.buscarPalabra("Excepción"); //para el try comento
 
-        
+        /*
+        try {
+            diccionario1.buscarPalabra("Excepción");
+        } catch (PalabraInexistenteException e) {
+            System.out.println("La palabra que está buscando no se encuentra en el diccionario.");
+        }
+        */
+
+
+
     }
 }

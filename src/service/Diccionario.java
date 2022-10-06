@@ -1,6 +1,7 @@
 package service;
 
 import domain.Palabra;
+import exceptions.PalabraInexistenteException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,7 +35,8 @@ public class Diccionario {
             }
         }
         if (!seEncontro) {
-            System.out.println("La palabra " + palabra + " no existe en el diccionario.");
+            throw new PalabraInexistenteException("La palabra " + palabra + " no existe en el diccionario.");
+            // al inicializarlo, me lo crea cuando se rompe el programa
         }
     }
 
